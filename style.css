@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+* {
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Paleta de cores */
+:root {
+    --body-color: #6d7e3a;
+    --nav-color: #58672c;
+    --side-nav: #43501d;
+    --text-color: #e5f2b6;
+    --search-bar: #9fac74;
+    --search-text: #192200;
+}
+
+/* Estilo geral */
+body {
+    background-color: var(--body-color);
+    padding-top: 70px; /* Evita que o conteúdo fique escondido atrás da nav */
+}
+
+/* NAVBAR */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 70px;
+    width: 100%;
+    background-color: var(--nav-color);
+    z-index: 100;
+}
+
+.nav-bar {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 30px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Logo */
+.logo-img {
+    height: 40px;
+}
+
+/* Links do menu */
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 15px;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: 500;
+    color: var(--text-color);
+    position: relative;
+    padding: 8px;
+}
+
+.nav-links li a::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    height: 6px;
+    width: 6px;
+    border-radius: 50%;
+    background: var(--text-color);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.nav-links li a:hover::before {
+    opacity: 1;
+}
+
+/* Barra de pesquisa */
+.search-box {
+    display: flex;
+    align-items: center;
+    background-color: var(--search-bar);
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.search-box input {
+    border: none;
+    background: none;
+    outline: none;
+    color: var(--search-text);
+    font-size: 14px;
+}
+
+.search-box i {
+    color: var(--search-text);
+    font-size: 18px;
+}
+
+/* Conteúdo principal */
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 70px);
+}
+
+.coming-soon img {
+    max-width: 90%;
+    height: auto;
+}
